@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+    <head>
+        <title>Cadastro Clientes</title>
+
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+        <!--Import materialize.css-->
+        <link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css"  media="screen,projection"/>
+
+        <!--Let browser know website is optimized for mobile-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    </head>
+
+    <body>
+
+    <nav>
+        <div class="nav-wrapper" style="background-color: #00838f;">
+            <a href="#!" class="brand-logo center" style="font-family: Times New Roman, Times, serif;">Cadastro</a>
+        </div>
+    </nav>
+
+    <h3><a href="/clientes" class="waves-effect waves-light btn"><i class="material-icons left">format_list_bulleted</i>Lista de Clientes</a></h3>
+
+    <div id="validMsg" style="text-align: center; font-size: 13pt">
+    <th:block th:include="validationMsg"></th:block>
+    </div>
+
+    <br>
+    <script>
+        let validMsg = document.getElementById("validMsg");
+
+        if(validMsg.innerText == "Sucesso!"){
+
+            validMsg.style.color= "green";
+            validMsg.focus();
+
+        }
+        else{
+            validMsg.style.color= "red";
+            validMsg.focus();
+        }
+
+    </script>
+
+    <form class="container" th:action="@{/cadastrar}" method="post">
+        Nome: <input type="text" value="" name="name">
+        Telefone: <input type="text" value="" name="telefone">
+        Serviço: <input type="text" value="" name="servico">
+        Bairro: <input type="text" value="" name="bairro">
+        Endereço: <input type="text" value="" name="endereco">
+        Valor: <input type="number" value="" name="valor">
+        Agendar: <input type="date" name="dataAgendamento">
+        Horário: <input type="text" value="00:00" name="horario">
+
+        <button class="waves-effect waves-light btn" type="submit">Salvar</button>
+    </form>
+
+    <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
+    </body>
+
+</html>

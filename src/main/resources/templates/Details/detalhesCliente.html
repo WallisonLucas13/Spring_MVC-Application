@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css"  media="screen,projection"/>
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+
+<body>
+<nav>
+    <div class="nav-wrapper" style="background-color: #00838f;">
+        <a href="#!" class="brand-logo center" style="font-family: Times New Roman, Times, serif;" th:text="${cliente.name}"></a>
+    </div>
+</nav>
+
+<h3><a href="/clientes" class="waves-effect waves-light btn"><i class="material-icons left">format_list_bulleted</i>Lista de Clientes</a></h3>
+
+    <table class="responsive-table">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Telefone</th>
+                <th>Serviço</th>
+                <th>Data de Agendamento</th>
+                <th>Horário</th>
+                <th>Valor</th>
+                <th>Bairro</th>
+                <th>Endereço</th>
+                <th>Data de Cadastro</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <td><span th:text="${cliente.name}"></span></td>
+            <td><span th:text="${cliente.telefone}"></span></td>
+            <td><span th:text="${cliente.servico}"></span></td>
+            <td><span th:text="${cliente.dataAgendamento}"></span></td>
+            <td><span th:text="${cliente.horario}"></span></td>
+            <td><span th:text="${cliente.valor}"></span></td>
+            <td><span th:text="${cliente.bairro}"></span></td>
+            <td><span th:text="${cliente.endereco}"></span></td>
+            <td><span th:text="${cliente.dataCadastro}"></span></td>
+        </tbody>
+
+    </table>
+
+<script type="text/javascript" src="materialize/js/materialize.min.js"></script>
+</body>
+
+</html>
