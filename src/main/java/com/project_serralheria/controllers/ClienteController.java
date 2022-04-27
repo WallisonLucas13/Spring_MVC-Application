@@ -21,6 +21,11 @@ public class ClienteController {
     @Autowired
     private ClienteService clienteService;
 
+    @GetMapping("/")
+    public String inicio(){
+        return "redirect:/clientes";
+    }
+
     @GetMapping("/cadastrar")
     public String form(){
         return "cadastro/formCliente";
